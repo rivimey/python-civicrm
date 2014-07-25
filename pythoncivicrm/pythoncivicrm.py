@@ -94,7 +94,7 @@ class CiviCRM:
             start = 'https://'
         else:
             start = 'http://'
-        self.url =  "%s%s/extern/rest.php" % (start, self.urlstring)
+        self.url =  "%s%s/civicrm/ajax/rest" % (start, self.urlstring)
 
     def _get(self, action, entity, parameters=None):
         """Internal method to make api calls"""
@@ -140,7 +140,7 @@ class CiviCRM:
                 }
         # these should all be set explicitly so remove from parameters
         for badparam in ['site_key', 'api_key', 'entity', 'action', 
-                'json']:
+                         'json']:
             parameters.pop(badparam, None)
         # add in parameters
         payload.update(parameters)
