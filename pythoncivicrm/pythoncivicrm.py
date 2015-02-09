@@ -257,7 +257,7 @@ class CiviCRM:
             in the request.
         """
         payload = self._payload_template(action, entity)
-        notparams = ['site_key', 'api_key', 'entity', 'action', 'json']
+        notparams = ['site_key', 'api_key', 'entity', 'action']
         return self._filter_merge_payload(parameters, payload, notparams)
 
     def _add_options(self, params, **kwargs):
